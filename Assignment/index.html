@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang chủ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary shadow fixed-top">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0" style="width: 300px">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Trang chủ</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./filters.html">Sản phẩm</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Danh mục
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <a class="navbar-brand" href="#">
+              <img
+                src="/Assignment/img/logo.png"
+                alt="Logo"
+                width="100"
+                class="d-inline-block align-text-top img-fluid"
+              />
+            </a>
+            <div
+              class="icons d-flex justify-content-end gap-2 align-items-center"
+              style="width: 300px"
+            >
+              <a href="" class="icon"><i class="bi bi-person-circle"></i></a>
+              <a href="./cart.html" class="icon bag"
+                ><i class="bi bi-bag"></i><span>2</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto">
+      <section class="banner">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/banner.jpg" class="img-fluid" alt="banner" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/banner.jpg" class="img-fluid" alt="banner" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/banner.jpg" class="img-fluid" alt="banner" />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section class="new_products mt-5 mb-3">
+        <h1 class="text-center">Sản phẩm mới</h1>
+        <div class="row gy-3">
+          <div class="col col-lg-3">
+            <div
+              class="card d-flex flex-column justify-content-between"
+              style="width: 18rem"
+            >
+              <img src="./img/pro1.jpg" class="card-img-top" alt="products" />
+              <div class="card-body">
+                <h5 class="card-title">Áo mùa đông</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <p class="card-price text-danger text-center">
+                  $223 <del class="text-black">$300</del>
+                </p>
+                <div class="d-flex justify-content-center">
+                  <a href="./detalis.html" class="btn btn-primary">Mua ngay</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
