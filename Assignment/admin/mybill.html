@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/Assignment/css/admin.css" />
+    <link rel="stylesheet" href="/Assignment/css/reset.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top z-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/Assignment/img/logo.png"
+              alt="Logo"
+              width="100"
+              class="d-inline-block align-text-top img-fluid"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Trang chủ</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#products-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-journal-text"></i><span>Sản phẩm</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="products-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li class="text-center p-3">
+              <a href="./product.html">
+                <i class="bi bi-dash"></i> <span>Danh sách sản phẩm</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#category-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-journal-text"></i><span>Danh mục</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="category-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li class="text-center p-3">
+              <a href="./category.html">
+                <i class="bi bi-dash"></i> <span>Danh sách danh mục</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#bill-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-journal-text"></i><span>Đơn hàng</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="bill-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li class="text-center p-3">
+              <a href="./bill.html">
+                <i class="bi bi-dash"></i> <span>Danh sách đơn hàng</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-login.html">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Log out</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <section class="h-100 h-custom">
+        <div class="container h-100 py-5">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col">
+              <div
+                class="card shopping-cart shadow"
+                style="border-radius: 15px"
+              >
+                <div class="card-body text-black">
+                  <div class="row">
+                    <div class="col-lg-6 px-5 py-4">
+                      <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">
+                        Thông tin khách hàng
+                      </h3>
+
+                      <div class="mb-3">
+                        <label class="form-label" for="typeText"
+                          >Số điện thoại</label
+                        >
+                        <input
+                          type="text"
+                          id="typeText"
+                          class="form-control form-control-lg"
+                          siez="17"
+                          value="1234 5678 9012 3457"
+                          minlength="19"
+                          maxlength="19"
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="form-label" for="typeName">Tên</label>
+                        <input
+                          type="text"
+                          id="typeName"
+                          class="form-control form-control-lg"
+                          value="John Smith"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control form-control-lg"
+                          value="John Smith"
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="form-label" for="typeName">Địa chỉ</label>
+                        <input
+                          type="text"
+                          id="typeName"
+                          class="form-control form-control-lg"
+                          value="John Smith"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 px-5 py-4">
+                      <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">
+                        Đơn hàng của tôi
+                      </h3>
+
+                      <div class="d-flex align-items-center mb-5">
+                        <div class="flex-shrink-0">
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+                            class="img-fluid"
+                            style="width: 150px"
+                            alt="Generic placeholder image"
+                          />
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <a href="#!" class="float-end text-black"
+                            ><i class="fas fa-times"></i
+                          ></a>
+                          <h5 class="text-primary">Cotton T-shirt</h5>
+                          <h6 style="color: #9e9e9e">Color: white</h6>
+                          <div class="d-flex align-items-center">
+                            <p class="fw-bold mb-0 me-5 pe-3">799$</p>
+                            <div
+                              class="def-number-input number-input safari_only"
+                            >
+                              x<input
+                                type="text"
+                                class="p-1 border-0"
+                                value="1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr
+                        class="mb-4"
+                        style="
+                          height: 2px;
+                          background-color: #1266f1;
+                          opacity: 1;
+                        "
+                      />
+
+                      <div class="d-flex justify-content-between px-x">
+                        <p class="fw-bold">Discount:</p>
+                        <p class="fw-bold">95$</p>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between p-2 mb-2"
+                        style="background-color: #e1f5fe"
+                      >
+                        <h5 class="fw-bold mb-0">Total:</h5>
+                        <h5 class="fw-bold mb-0">2261$</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

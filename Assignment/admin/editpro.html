@@ -21,7 +21,14 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top z-3">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">
+            <img
+              src="/Assignment/img/logo.png"
+              alt="Logo"
+              width="100"
+              class="d-inline-block align-text-top img-fluid"
+            />
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -85,6 +92,28 @@
             <li class="text-center p-3">
               <a href="./category.html">
                 <i class="bi bi-dash"></i> <span>Danh sách danh mục</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#bill-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-journal-text"></i><span>Đơn hàng</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="bill-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li class="text-center p-3">
+              <a href="./bill.html">
+                <i class="bi bi-dash"></i> <span>Danh sách đơn hàng</span>
               </a>
             </li>
           </ul>
@@ -171,7 +200,7 @@
             </div>
           </div>
           <div class="col-12">
-            <button class="btn btn-primary" type="submit">Thêm</button>
+            <button class="btn btn-primary" type="submit">Sửa</button>
           </div>
         </form>
       </div>
