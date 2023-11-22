@@ -1,0 +1,129 @@
+<div class="row" style="margin-top: 120px">
+  <div class="col col-lg-4">
+    <img src="{{product.img}}" class="img-fluid" alt="pro1" />
+  </div>
+  <div class="col col-lg-8">
+    <form action="">
+      <h1>{{product.name}}</h1>
+      <!-- <h5>{{product.img}}</h5> -->
+      <h3 class="d-flex align-items-center gap-2">
+        <del class="text-warning fs-5">$232</del>{{product.price}}
+      </h3>
+      <p>{{product.desc}}</p>
+      <hr />
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Số lượng</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="exampleFormControlInput1"
+          value="1"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="" class="mb-3">Size</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="mb-4" data-filter="color">
+        <h6 class="font-weight-bold mb-3">Color</h6>
+
+        <div class="form-check form-check-inline m-0 p-0 pr-3">
+          <input
+            class="btn-check"
+            type="radio"
+            name="colorRadio"
+            id="colorRadio1"
+            value="white"
+          />
+          <label class="btn bg-light btn-rounded p-3" for="colorRadio1"></label>
+        </div>
+
+        <div class="form-check form-check-inline m-0 p-0 pr-3">
+          <input
+            class="btn-check"
+            type="radio"
+            name="colorRadio"
+            id="colorRadio2"
+            value="grey"
+          />
+          <label
+            class="btn btn-rounded p-3"
+            for="colorRadio2"
+            style="background-color: #bdbdbd"
+          ></label>
+        </div>
+
+        <div class="form-check form-check-inline m-0 p-0 pr-3">
+          <input
+            class="btn-check"
+            type="radio"
+            name="colorRadio"
+            id="colorRadio3"
+            value="black"
+          />
+          <label
+            class="btn bg-dark text-white btn-rounded p-3"
+            for="colorRadio3"
+          ></label>
+        </div>
+
+        <div class="form-check form-check-inline m-0 p-0 pr-3">
+          <input
+            class="btn-check"
+            type="radio"
+            name="colorRadio"
+            id="colorRadio5"
+            value="blue"
+          />
+          <label
+            class="btn bg-primary btn-rounded p-3"
+            for="colorRadio5"
+          ></label>
+        </div>
+
+        <div class="form-check form-check-inline mt-3 mr-0 p-0 pr-3">
+          <input
+            class="btn-check"
+            type="radio"
+            name="colorRadio"
+            id="colorRadio9"
+            value="red"
+          />
+          <label
+            class="btn bg-danger btn-rounded p-3"
+            for="colorRadio9"
+          ></label>
+        </div>
+
+        <div class="form-check form-check-inline mt-3 mr-0 p-0 pr-3">
+          <input
+            class="btn-check"
+            type="radio"
+            name="colorRadio"
+            id="colorRadio10"
+            value="orange"
+          />
+          <label
+            class="btn bg-warning btn-rounded p-3"
+            for="colorRadio10"
+          ></label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <a href="./checkout.html" class="btn btn-success">
+          Mua ngay <i class="bi bi-heart-fill"></i>
+        </a>
+        <a href="./cart.html" class="btn btn-primary">
+          <i class="bi bi-cart"></i> Thêm vào giỏ hàng
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

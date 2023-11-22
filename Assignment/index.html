@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,12 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -37,36 +32,15 @@
           >
             <ul class="navbar-nav mb-2 mb-lg-0" style="width: 300px">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Trang chủ</a
-                >
+                <a class="nav-link" href="/">Trang chủ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./filters.html">Sản phẩm</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Danh mục
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
+                <a class="nav-link" href="#!/timkiem">Tìm kiếm</a>
               </li>
             </ul>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#!">
               <img
-                src="/Assignment/img/logo.png"
+                src="/img/logo.png"
                 alt="Logo"
                 width="100"
                 class="d-inline-block align-text-top img-fluid"
@@ -87,8 +61,10 @@
                   <i class="bi bi-person-circle"></i>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                  <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                  <li>
+                    <a class="dropdown-item" href="./login.html">Đăng nhập</a>
+                  </li>
+                  <li><a class="dropdown-item" href="">Đăng xuất</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a class="dropdown-item" href="./admin/index.html"
@@ -97,102 +73,26 @@
                   </li>
                 </ul>
               </li>
-
-              <a href="./cart.html" class="icon bag"
+              <!-- <a href="./cart.html" class="icon bag"
                 ><i class="bi bi-bag"></i><span>2</span></a
+              > -->
+              <a
+                class="d-block position-relative text-black"
+                href="./cart.html"
               >
+                <i class="bi bi-bag p-3"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"
+                  >+99
+                  <span class="visually-hidden">unread messages</span></span
+                >
+              </a>
             </div>
           </div>
         </div>
       </nav>
     </header>
-    <main class="container mx-auto">
-      <section class="banner">
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./img/banner.jpg" class="img-fluid" alt="banner" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/banner.jpg" class="img-fluid" alt="banner" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/banner.jpg" class="img-fluid" alt="banner" />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-      <section class="new_products mt-5 mb-3">
-        <h1 class="text-center">Sản phẩm mới</h1>
-        <div class="row gy-3">
-          <div class="col col-lg-3">
-            <div
-              class="card d-flex flex-column justify-content-between"
-              style="width: 18rem"
-            >
-              <img src="./img/pro1.jpg" class="card-img-top" alt="products" />
-              <div class="card-body">
-                <h5 class="card-title">Áo mùa đông</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-price text-danger text-center">
-                  $223 <del class="text-black">$300</del>
-                </p>
-                <div class="d-flex justify-content-center">
-                  <a href="./detalis.html" class="btn btn-primary">Mua ngay</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="new_products mt-5 mb-3">
-        <h1 class="text-center">Sản phẩm bán chạy</h1>
-        <div class="row gy-3">
-          <div class="col col-lg-3">
-            <div
-              class="card d-flex flex-column justify-content-between"
-              style="width: 18rem"
-            >
-              <img src="./img/pro1.jpg" class="card-img-top" alt="products" />
-              <div class="card-body">
-                <h5 class="card-title">Áo mùa đông</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-price text-danger text-center">
-                  $223 <del class="text-black">$300</del>
-                </p>
-                <div class="d-flex justify-content-center">
-                  <a href="./detalis.html" class="btn btn-primary">Mua ngay</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <main class="container mx-auto" ng-view></main>
     <footer class="border border-top">
       <div class="row container mx-auto pt-3 g-5">
         <div class="col col-lg-4">
@@ -232,10 +132,34 @@
         </div>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Boostrap JS Library -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <!-- AngularJS  -->
+    <script src="/js/ajax.googleapis.com_ajax_libs_angularjs_1.8.2_angular.min.js"></script>
+    <script src="/js/ajax.googleapis.com_ajax_libs_angularjs_1.8.2_angular-route.min.js"></script>
+    <script>
+      var app = angular.module("myApp", ["ngRoute"]);
+      app.config(function ($routeProvider) {
+        $routeProvider
+          .when("/", {
+            templateUrl: "/components/trangchu/home.html",
+            controller: "HomeController",
+          })
+          .when("/detail/:id", {
+            templateUrl: "/components/chitiet/detali.html",
+            controller: "DetailController",
+          })
+          .when("/timkiem", {
+            templateUrl: "/components/timkiem/timkiem.html",
+            controller: "TimkiemController",
+          })
+          .otherwise({
+            redirectTo: "/",
+          });
+      });
+    </script>
+    <script src="/components/trangchu/home.js"></script>
+    <script src="/components/chitiet/detail.js"></script>
+    <script src="/components/timkiem/timkiem.js"></script>
   </body>
 </html>

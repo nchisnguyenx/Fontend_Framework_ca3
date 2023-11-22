@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Quần thun",
+      "price": "$100",
+      "desc": "Sản phẩm chính hãng, chất lượng, uy tín hàng đầu thế giới",
+      "img": "/img/pro1.jpg",
+      "idDanhmuc": 1
+    },
+    {
+      "id": 2,
+      "name": "Áo thu đông",
+      "price": "$100",
+      "desc": "Sản phẩm chính hãng, chất lượng, uy tín hàng đầu thế giới",
+      "img": "/img/pro1.jpg",
+      "idDanhmuc": 2
+    },
+    {
+      "id": 3,
+      "name": "Váy thu đông",
+      "price": "$100",
+      "desc": "Sản phẩm chính hãng, chất lượng, uy tín hàng đầu thế giới",
+      "img": "/img/pro1.jpg",
+      "idDanhmuc": 3
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Quần"
+    },
+    {
+      "id": 2,
+      "name": "Áo"
+    },
+    {
+      "id": 3,
+      "name": "Váy"
+    }
+  ]
+}
