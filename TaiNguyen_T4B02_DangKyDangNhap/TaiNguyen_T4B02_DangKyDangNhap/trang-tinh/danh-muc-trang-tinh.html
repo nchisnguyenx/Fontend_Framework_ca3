@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm theo danh mục</title>
+
+    <!-- Nhúng bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/bootstrap.js"></script>
+
+    <!-- Nhúng font icon -->
+    <script src="https://kit.fontawesome.com/ae333ffef2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container">
+        <!-- Header 1 -->
+        <div class="row py-2">
+            <div class="col-4"></div>
+            <div class="col-4 text-center align-self-center">
+                <a href="#/!">
+                    <img src="/img/logo/logo-black.webp" alt="" style="height: 36px;">
+                </a>
+            </div>
+            <div class="col-4 text-end align-self-center">
+                <i class="fa-solid fa-heart ms-2"></i>
+                <i class="fa-solid fa-cart-shopping ms-2"></i>
+                <a href="/dang-nhap.html" class="ms-2 btn btn-light btn-sm">Đăng nhập</a>
+                <a href="/dang-ky.html" class="ms-2 btn btn-primary btn-sm">Đăng ký</a>
+            </div>
+        </div>
+
+        <!-- Header 2 -->
+        <div class="d-flex justify-content-center align-items-center">
+            <span style="font-size: small;">
+                <a href="#!" class="text-decoration-none text-secondary">Danh Mục 01</a>
+                <span class="text-secondary mx-2">/</span>
+            </span>
+            <span style="font-size: small;">
+                <a href="#!" class="text-decoration-none text-secondary">Danh Mục 02</a>
+                <span class="text-secondary mx-2">/</span>
+            </span>
+            <span style="font-size: small;">
+                <a href="#!" class="text-decoration-none text-secondary">Danh Mục 03</a>
+                <!-- <span class="text-secondary mx-2">/</span> -->
+            </span>
+        </div>
+
+    </div>
+
+    <!-- Khu vực main content -->
+    <div class="container" style="min-height: calc(100vh - 140px);" ng-view>
+        <!-- Tiêu đề -->
+        <h1 class="text-uppercase text-center h4 py-3 fw-bold">Tiêu đề trang</h1>
+
+        <!-- Hiển thị sản phẩm -->
+        <div class="row">
+            <!-- Box sản phẩm -->
+            <div class="col-4 mb-5">
+                <!-- Ảnh -->
+                <div class="mb-1 rounded overflow-hidden">
+                    <a href="" class="d-block position-relative">
+                        <img class="img-fluid" src="/img/sanpham/ao-blazer-01.webp" alt="">
+                        <img class="img-fluid position-absolute bottom-0 start-0" src="/img/black-friday.webp" alt="">
+                    </a>
+
+                </div>
+
+                <!-- Tên -->
+                <h1 class="text-capitalize mb-1" style="font-size: small;">Áo Khoác Chần Bông Nam Cổ Trụ Phối Rib Form Regular - 10F23JAC007</h1>
+
+                <!-- Giá -->
+                <div class="fw-bold text-secondary float-start"><del> 1,010,000 VNĐ </del></div>
+                <div class="fw-bold float-end"> 1,010,000 VNĐ </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Khu vực footer -->
+    <div class="container-fluid bg-dark">
+        <div class="container py-3">
+            <div class="text-start">
+                <img src="/img/logo/logo-white.webp" alt="" height="32px">
+            </div>
+            <div class="text-start">
+                <span class="text-light" style="font-size: small;">CÔNG TY TNHH ROUTINE VIETNAM | Địa chỉ: tầng 5 Tòa
+                    nhà IMC, 62 Trần Quang Khải - Phường Tân Định - Quận 1 - TP Hồ Chí Minh.</span>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

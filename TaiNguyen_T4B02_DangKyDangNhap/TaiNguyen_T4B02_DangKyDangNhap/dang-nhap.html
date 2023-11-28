@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appSinIn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+
+    <!-- Nhúng bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+
+    <!-- Nhúng font icon -->
+    <script
+      src="https://kit.fontawesome.com/ae333ffef2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <!-- Header 1 -->
+      <div class="row py-2">
+        <div class="col-4"></div>
+        <div class="col-4 text-center align-self-center">
+          <a href="#/!">
+            <img src="/img/logo/logo-black.webp" alt="" style="height: 36px" />
+          </a>
+        </div>
+        <div class="col-4 text-end align-self-center">
+          <!-- <i class="fa-solid fa-heart ms-2"></i>
+          <i class="fa-solid fa-cart-shopping ms-2"></i> -->
+          <!-- <a href="/dang-nhap.html" class="ms-2 btn btn-light btn-sm"
+            >Đăng nhập</a
+          > -->
+          <a href="/dang-ky.html" class="ms-2 btn btn-primary btn-sm"
+            >Đăng ký</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Khu vực main content -->
+    <div class="container" style="min-height: calc(100vh - 140px)" ng-view>
+      <h1 class="text-center">Đăng nhập tài khoản</h1>
+      <form
+        style="width: 500px; margin: auto"
+        class="shadow-lg p-3 rounded-2"
+        ng-controller="SinInController"
+        ng-submit="sinIn()"
+      >
+        <div class="alert alert-danger alert-dismissible" ng-show="isValid">
+          <button
+            type="button"
+            class="btn btn-close"
+            ng-click="closeAlert()"
+          ></button>
+          <strong>Fail!</strong> Đăng nhập thất bại !!! <br />{{notifyErro}}
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            ng-model="user.email"
+            placeholder="abc@mail.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+            placeholder="Nhập password"
+            ng-model="user.password"
+          />
+        </div>
+
+        <button class="btn btn-success" type="submit">Đăng nhập</button>
+      </form>
+    </div>
+
+    <!-- Khu vực footer -->
+    <div class="container-fluid bg-dark">
+      <div class="container py-3">
+        <div class="text-start">
+          <img src="/img/logo/logo-white.webp" alt="" height="32px" />
+        </div>
+        <div class="text-start">
+          <span class="text-light" style="font-size: small"
+            >CÔNG TY TNHH ROUTINE VIETNAM | Địa chỉ: tầng 5 Tòa nhà IMC, 62 Trần
+            Quang Khải - Phường Tân Định - Quận 1 - TP Hồ Chí Minh.</span
+          >
+        </div>
+      </div>
+    </div>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/angular-route.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script>
+      var app = angular.module("appSinIn", []);
+      app.controller("SinInController", function ($scope, $http, $window) {
+        $scope.user = { email: "", password: "" };
+
+        $scope.isValid = false;
+        $scope.notifyErro = "";
+        $scope.closeAlert = function () {
+          $scope.isValid = false;
+        };
+        $scope.sinIn = function () {
+          // Validate
+          if ($scope.user.email === "" || $scope.user.password === "") {
+            $scope.isValid = true;
+            $scope.notifyErro = "Không được để trống";
+            return;
+          }
+          $http({
+            url: "http://localhost:3000/user",
+            method: "GET",
+            params: $scope.user,
+          }).then(function (res) {
+            if (res.data.length === 0) {
+              $scope.notifyErro =
+                "Email and password Không chính xác!! Xin mời nhập lại!";
+            } else {
+              sessionStorage.setItem("user", $scope.user.email);
+              $window.location.href = "/index.html";
+            }
+          });
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -12,9 +12,15 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary shadow fixed-top">
-        <div class="container">
+    <header ng-controller="headerController">
+      <nav
+        class="navbar navbar-expand-lg shadow fixed-top fw-bold"
+        style="background-color: #faf5e9; height: 57px"
+      >
+        <div
+          class="container-xxl"
+          style="background-color: #faf5e9; height: 57px"
+        >
           <button
             class="navbar-toggler"
             type="button"
@@ -32,22 +38,26 @@
           >
             <ul class="navbar-nav mb-2 mb-lg-0" style="width: 300px">
               <li class="nav-item">
-                <a class="nav-link" href="/">Trang chủ</a>
+                <a class="nav-link" href="/" style="color: #003400"
+                  >Trang chủ</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#!/timkiem">Tìm kiếm</a>
+                <a class="nav-link" href="#!/timkiem" style="color: #003400"
+                  >Tìm kiếm</a
+                >
               </li>
             </ul>
-            <a class="navbar-brand" href="#!">
+            <a class="navbar-brand p-0" href="#!">
               <img
                 src="/img/logo.png"
                 alt="Logo"
                 width="100"
-                class="d-inline-block align-text-top img-fluid"
+                class="d-inline-block align-text-top img-fluid h-100 object-fit-cover"
               />
             </a>
             <div
-              class="icons d-flex justify-content-end gap-2 align-items-center"
+              class="icons d-flex justify-content-lg-end p-lg-0 pb-2 gap-2 align-items-center"
               style="width: 300px"
             >
               <li class="nav-item dropdown" style="list-style: none">
@@ -61,25 +71,26 @@
                   <i class="bi bi-person-circle"></i>
                 </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="./login.html">Đăng nhập</a>
+                  <li ng-show="userName === null ">
+                    <a class="dropdown-item" href="/login.html">Đăng nhập </a>
                   </li>
-                  <li><a class="dropdown-item" href="">Đăng xuất</a></li>
+                  <li ng-show="userName !== null ">
+                    <a class="dropdown-item" href="/login.html"
+                      >Xin chào {{userName}}
+                    </a>
+                  </li>
+                  <li ng-show="userName !== null " ng-click="logout()">
+                    <a class="dropdown-item">Đăng xuất</a>
+                  </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="./admin/index.html"
+                    <a class="dropdown-item" href="/admin/index.html"
                       >Đăng nhập Admin</a
                     >
                   </li>
                 </ul>
               </li>
-              <!-- <a href="./cart.html" class="icon bag"
-                ><i class="bi bi-bag"></i><span>2</span></a
-              > -->
-              <a
-                class="d-block position-relative text-black"
-                href="./cart.html"
-              >
+              <a class="d-block position-relative text-black" href="#!/cart">
                 <i class="bi bi-bag p-3"></i>
                 <span
                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"
@@ -92,22 +103,23 @@
         </div>
       </nav>
     </header>
-    <main class="container mx-auto" ng-view></main>
-    <footer class="border border-top">
+    <main ng-view></main>
+    <footer
+      class="border border-top bg-black"
+      style="margin-top: 250px; color: #fbebce"
+    >
       <div class="row container mx-auto pt-3 g-5">
         <div class="col col-lg-4">
           <p class="text-uppercase">KẾT NỐI VỚI CHÚNG TÔI</p>
 
           <p>
-            <a class="link-opacity-10-hover text-black" href="#"
+            <a class="link-opacity-30-hover" href="#"
               >Đăng ký để nhận thông tin mới nhất về bộ sưu tập, chiến dịch và
               video.</a
             >
           </p>
           <p>
-            <a class="link-opacity-10-hover text-black" href="#"
-              >Theo dõi chúng tôi</a
-            >
+            <a class="link-opacity-30-hover" href="#">Theo dõi chúng tôi</a>
           </p>
         </div>
 
@@ -115,19 +127,13 @@
           <p class="text-uppercase">Dịch vụ</p>
 
           <p>
-            <a class="link-opacity-10-hover text-black" href="#"
-              >Dịch vụ bảo dưỡng</a
-            >
+            <a class="link-opacity-30-hover" href="#">Dịch vụ bảo dưỡng</a>
           </p>
           <p>
-            <a class="link-opacity-10-hover text-black" href="#"
-              >Dịch vụ cá nhân hóa</a
-            >
+            <a class="link-opacity-30-hover" href="#">Dịch vụ cá nhân hóa</a>
           </p>
           <p>
-            <a class="link-opacity-10-hover text-black" href="#"
-              >Nghệ thuật tặng quà</a
-            >
+            <a class="link-opacity-30-hover" href="#">Nghệ thuật tặng quà</a>
           </p>
         </div>
       </div>
@@ -139,6 +145,20 @@
     <script src="/js/ajax.googleapis.com_ajax_libs_angularjs_1.8.2_angular-route.min.js"></script>
     <script>
       var app = angular.module("myApp", ["ngRoute"]);
+      app.controller("headerController", function ($scope) {
+        if (sessionStorage.getItem("user")) {
+          $scope.user = JSON.parse(sessionStorage.getItem("user"));
+          const [user] = $scope.user;
+          $scope.userName = user.userName;
+
+          $scope.logout = function () {
+            sessionStorage.removeItem("user");
+            $window.location.reload();
+          };
+        } else {
+          $scope.userName = null;
+        }
+      });
       app.config(function ($routeProvider) {
         $routeProvider
           .when("/", {
@@ -153,6 +173,18 @@
             templateUrl: "/components/timkiem/timkiem.html",
             controller: "TimkiemController",
           })
+          .when("/cart", {
+            templateUrl: "/components/giohang/cart.html",
+            controller: "CartController",
+          })
+          .when("/login", {
+            templateUrl: "/components/login/login.html",
+            controller: "loginController",
+          })
+          .when("/register", {
+            templateUrl: "/components/register/register.html",
+            controller: "RegisterController",
+          })
           .otherwise({
             redirectTo: "/",
           });
@@ -161,5 +193,6 @@
     <script src="/components/trangchu/home.js"></script>
     <script src="/components/chitiet/detail.js"></script>
     <script src="/components/timkiem/timkiem.js"></script>
+    <!-- <script src="/components/giohang/cart.js"></script> -->
   </body>
 </html>

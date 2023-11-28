@@ -1,0 +1,51 @@
+<div class="mb-3 p-5">
+  <h1 class="text-bg-success rounded p-2 w-50 mb-4">Danh sách sản phẩm</h1>
+  <a href="#!/addPro" class="btn btn-primary"
+    ><i class="bi bi-plus-circle"></i> Thêm</a
+  >
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Ảnh</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Số lượng</th>
+        <th scope="col">Màu</th>
+        <th scope="col">Size</th>
+        <th scope="col">Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="pro in products">
+        <th scope="row">{{pro.id}}</th>
+        <td>{{pro.namePro}}</td>
+        <td>
+          <img
+            src="/img/pro1.jpg"
+            alt="pro"
+            class="img-fluid"
+            style="height: 100px"
+          />
+        </td>
+        <td>{{pro.pricePro}}</td>
+        <td>{{pro.soluong}}</td>
+        <td>{{pro.color}}</td>
+        <td>{{pro.size}}</td>
+
+        <td>
+          <a href="#!/editPro/{{pro.id}}" class="btn btn-secondary">
+            <i class="bi bi-pen"></i> Sửa
+          </a>
+
+          <a href="./deletepro.html" class="btn btn-danger">
+            <i class="bi bi-trash"></i> Xoá
+          </a>
+          <a href="./deltailpro.html" class="btn btn-primary">
+            <i class="bi bi-journal-check"></i> Chi tiết
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

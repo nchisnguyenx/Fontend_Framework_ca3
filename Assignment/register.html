@@ -1,92 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sinUp">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang chủ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="bg-body-secondary">
-    <div style="width: 500px; margin: 120px auto" class="bg-white p-4 rounded">
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg shadow fixed-top fw-bold"
+        style="background-color: #faf5e9; height: 57px"
+      >
+        <div
+          class="container-xxl"
+          style="background-color: #faf5e9; height: 57px"
+        >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0" style="width: 300px">
+              <li class="nav-item">
+                <a class="nav-link" href="/" style="color: #003400"
+                  >Trang chủ</a
+                >
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#!/timkiem" style="color: #003400"
+                  >Tìm kiếm</a
+                >
+              </li> -->
+            </ul>
+            <a class="navbar-brand p-0" href="#!">
+              <img
+                src="/img/logo.png"
+                alt="Logo"
+                width="100"
+                class="d-inline-block align-text-top img-fluid h-100 object-fit-cover"
+              />
+            </a>
+            <div style="width: 300px"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div
+      style="width: 500px; margin: 120px auto"
+      class="bg-white p-4 rounded"
+      ng-controller="sinUpController"
+    >
       <!-- Pills navs -->
       <ul class="nav nav-pills nav-justified mb-5" id="ex1" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="tab-login" href="./login.html">Login</a>
+          <a class="nav-link" id="tab-login" href="/login.html">Login</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link active" href="./register.html">Register</a>
+          <a class="nav-link active" href="/register.html">Register</a>
         </li>
       </ul>
       <!-- Pills navs -->
 
       <!-- Pills content -->
       <div class="tab-content">
-        <div>
-          <form>
-            <!-- Name input -->
-            <div class="mb-4">
-              <label class="form-label" for="registerName">Name</label>
-              <input type="text" id="registerName" class="form-control" />
+        <div
+          class="alert alert-warning alert-dismissible fade show"
+          ng-show="isValid"
+          role="alert"
+        >
+          <strong>Thất Bại !! </strong> {{notifyError}}
+          <button
+            type="button"
+            class="btn-close"
+            ng-click="closeNotifyError()"
+          ></button>
+        </div>
+        <div class="">
+          <form ng-submit="sinUp()">
+            <!-- User Name input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="userName">User Name</label>
+              <input
+                type="text"
+                id="userName"
+                class="form-control"
+                name="username"
+                ng-model="user.userName"
+              />
             </div>
-
-            <!-- Username input -->
-            <div class="mb-4">
-              <label class="form-label" for="registerUsername">Username</label>
-              <input type="text" id="registerUsername" class="form-control" />
-            </div>
-
             <!-- Email input -->
-            <div class="mb-4">
-              <label class="form-label" for="registerEmail">Email</label>
-              <input type="email" id="registerEmail" class="form-control" />
+            <div class="form-outline mb-4">
+              <label class="form-label" for="loginName">Email</label>
+              <input
+                type="email"
+                id="loginName"
+                class="form-control"
+                name="email"
+                ng-model="user.email"
+              />
             </div>
 
             <!-- Password input -->
-            <div class="mb-4">
-              <label class="form-label" for="registerPassword">Password</label>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="loginPassword">Password</label>
               <input
                 type="password"
-                id="registerPassword"
+                id="loginPassword"
                 class="form-control"
+                name="password"
+                ng-model="user.password"
               />
             </div>
-
-            <!-- Repeat Password input -->
-            <div class="mb-4">
-              <label class="form-label" for="registerRepeatPassword"
-                >Repeat password</label
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="cofirmPassword"
+                >Cofirm Password</label
               >
               <input
                 type="password"
-                id="registerRepeatPassword"
+                id="cofirmPassword"
                 class="form-control"
+                name="cofirmPassword"
+                ng-model="cofirmPassword"
               />
             </div>
 
-            <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-center mb-4">
-              <input
-                class="form-check-input me-2"
-                type="checkbox"
-                value=""
-                id="registerCheck"
-                checked
-                aria-describedby="registerCheckHelpText"
-              />
-              <label class="form-check-label" for="registerCheck">
-                I have read and agree to the terms
-              </label>
+            <!-- 2 column grid layout -->
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex justify-content-center"></div>
+
+              <div class="col-md-6 d-flex justify-content-center">
+                <!-- Simple link -->
+                <a href="#!">Forgot password?</a>
+              </div>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-3">
-              Sign up
-            </button>
+            <button type="submit" class="btn btn-primary mb-4">Sign up</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>I have an account!! <a href="./register.html">Login</a></p>
+            </div>
           </form>
         </div>
       </div>
       <!-- Pills content -->
     </div>
-    <script src="/Assignment/js/bootstrap.bundle.min.js"></script>
+
+    <footer
+      class="border border-top bg-black"
+      style="margin-top: 250px; color: #fbebce"
+    >
+      <div class="row container mx-auto pt-3 g-5">
+        <div class="col col-lg-4">
+          <p class="text-uppercase">KẾT NỐI VỚI CHÚNG TÔI</p>
+
+          <p>
+            <a class="link-opacity-30-hover" href="#"
+              >Đăng ký để nhận thông tin mới nhất về bộ sưu tập, chiến dịch và
+              video.</a
+            >
+          </p>
+          <p>
+            <a class="link-opacity-30-hover" href="#">Theo dõi chúng tôi</a>
+          </p>
+        </div>
+
+        <div class="col col-lg-8">
+          <p class="text-uppercase">Dịch vụ</p>
+
+          <p>
+            <a class="link-opacity-30-hover" href="#">Dịch vụ bảo dưỡng</a>
+          </p>
+          <p>
+            <a class="link-opacity-30-hover" href="#">Dịch vụ cá nhân hóa</a>
+          </p>
+          <p>
+            <a class="link-opacity-30-hover" href="#">Nghệ thuật tặng quà</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajax.googleapis.com_ajax_libs_angularjs_1.8.2_angular.min.js"></script>
+    <script>
+      var app = angular.module("sinUp", []);
+      app.controller("sinUpController", function ($scope, $window, $http) {
+        $scope.isValid = false;
+        $scope.notifyError = "";
+        $scope.user = {
+          userName: "",
+          email: "",
+          password: "",
+        };
+        $scope.cofirmPassword = "";
+        $scope.closeNotifyError = function () {
+          $scope.isValid = false;
+        };
+        $scope.sinUp = function () {
+          if (
+            $scope.user.email === "" ||
+            $scope.user.userName === "" ||
+            $scope.user.password === "" ||
+            $scope.user.cofirmPassword === ""
+          ) {
+            $scope.notifyError =
+              "Không được để rỗng!! Xin nhập đầy đủ thông tin";
+            $scope.isValid = true;
+            return;
+          }
+          if ($scope.user.password !== $scope.cofirmPassword) {
+            $scope.notifyError =
+              "Password và Cofirm Password không giống nhau!! Xin mời nhập lại!";
+            $scope.isValid = true;
+            return;
+          }
+
+          $http({
+            url: "http://localhost:3000/user",
+            method: "POST",
+            data: $scope.user,
+          }).then(function (res) {
+            console.log(res.data);
+          });
+          $window.location.href = "/login.html";
+        };
+      });
+    </script>
   </body>
 </html>

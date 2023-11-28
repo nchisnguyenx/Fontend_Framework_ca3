@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+
+    <!-- Nhúng bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+
+    <!-- Nhúng font icon -->
+    <script
+      src="https://kit.fontawesome.com/ae333ffef2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body ng-controller="myController">
+    <!-- Header -->
+    <div class="container">
+      <!-- Header 1 -->
+      <div class="row py-2">
+        <div class="col-4"></div>
+        <div class="col-4 text-center align-self-center">
+          <a href="#/!">
+            <img src="/img/logo/logo-black.webp" alt="" style="height: 36px" />
+          </a>
+        </div>
+        <div class="col-4 text-end align-self-center">
+          <i class="fa-solid fa-heart ms-2"></i>
+          <i class="fa-solid fa-cart-shopping ms-2"></i>
+          <a
+            ng-show="userEmail == null "
+            href="/dang-nhap.html"
+            class="ms-2 btn btn-light btn-sm"
+            >Đăng nhập</a
+          >
+          <a
+            ng-show="userEmail == null "
+            href="/dang-ky.html"
+            class="ms-2 btn btn-primary btn-sm"
+            >Đăng ký</a
+          >
+          <a
+            ng-show="userEmail !== null "
+            class="ms-2 btn btn-primary btn-sm"
+            ng-click="logout()"
+            >Đăng xuất</a
+          >
+        </div>
+      </div>
+
+      <!-- Header 2 -->
+      <div class="d-flex justify-content-center align-items-center">
+        <span style="font-size: small">
+          <a href="#!" class="text-decoration-none text-secondary"
+            >Danh Mục 01</a
+          >
+          <span class="text-secondary mx-2">/</span>
+        </span>
+        <span style="font-size: small">
+          <a href="#!" class="text-decoration-none text-secondary"
+            >Danh Mục 02</a
+          >
+          <span class="text-secondary mx-2">/</span>
+        </span>
+        <span style="font-size: small">
+          <a href="#!" class="text-decoration-none text-secondary"
+            >Danh Mục 03</a
+          >
+          <!-- <span class="text-secondary mx-2">/</span> -->
+        </span>
+      </div>
+    </div>
+
+    <!-- Khu vực main content -->
+    <div class="container" style="min-height: calc(100vh - 140px)" ng-view>
+      // Khu vực ng-view
+    </div>
+
+    <!-- Khu vực footer -->
+    <div class="container-fluid bg-dark">
+      <div class="container py-3">
+        <div class="text-start">
+          <img src="/img/logo/logo-white.webp" alt="" height="32px" />
+        </div>
+        <div class="text-start">
+          <span class="text-light" style="font-size: small"
+            >CÔNG TY TNHH ROUTINE VIETNAM | Địa chỉ: tầng 5 Tòa nhà IMC, 62 Trần
+            Quang Khải - Phường Tân Định - Quận 1 - TP Hồ Chí Minh.</span
+          >
+        </div>
+      </div>
+    </div>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/angular-route.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myController", function ($scope, $http, $window) {
+        $scope.userEmail = sessionStorage.getItem("user");
+        $scope.logout = function () {
+          sessionStorage.removeItem("user");
+          $window.location.reload();
+        };
+      });
+    </script>
+  </body>
+</html>

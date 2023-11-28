@@ -1,0 +1,91 @@
+<div class="mb-3 p-5">
+  <h1 class="text-bg-success rounded p-2 w-50 mb-4">Sửa sản phẩm</h1>
+  <div
+    class="alert alert-warning alert-dismissible fade show"
+    ng-show="isValid"
+    role="alert"
+  >
+    <strong>Thất Bại !! </strong> {{notifyError}}
+    <button
+      type="button"
+      class="btn-close"
+      ng-click="closeNotifyError()"
+    ></button>
+  </div>
+  <form class="row g-3" ng-submit="addProSubmit()">
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Tên sản phẩm</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        ng-model="pro.namePro"
+        name="namePro"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Giá sản phẩm</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom02"
+        value="0"
+        ng-model="pro.pricePro"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Số lượng</label>
+      <div class="input-group has-validation">
+        <input
+          type="number"
+          class="form-control"
+          id="validationCustomUsername"
+          aria-describedby="inputGroupPrepend"
+          value="1"
+          ng-model="pro.soluong"
+        />
+        <div class="invalid-feedback">Vui lòng điền số lượng</div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom04" class="form-label">Kích thước</label>
+      <select class="form-select" id="validationCustom04" ng-model="pro.size">
+        <option ng-repeat="size in sizes" value="{{size.size}}">
+          {{size.size}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom05" class="form-label">Màu</label>
+      <select class="form-select" id="validationCustom05" ng-model="pro.color">
+        <option ng-repeat="color in colors" value="{{color.color}}">
+          {{color.color}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom06" class="form-label">Ảnh</label>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          id="inputGroupFile02"
+          ng-model="pro.img"
+        />
+      </div>
+    </div>
+    <div class="col-12">
+      <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        ng-model="pro.desc"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Sửa</button>
+    </div>
+  </form>
+</div>

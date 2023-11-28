@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="productApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter</title>
+  </head>
+
+  <body ng-controller="productController">
+    <form>
+      <label ng-repeat="category in categories">
+        <input
+          type="checkbox"
+          ng-model="selectedCategories[category.id]"
+          ng-change="filterProducts()"
+        />
+        {{category.name}}
+      </label>
+    </form>
+
+    <div ng-repeat="product in filteredProducts">
+      {{ product.name }} - {{ product.idDanhmuc }}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("productApp", []);
+
+      app.controller("productController", function ($scope, $http) {
+        $scope.selectedCategories = {};
+        $scope.filteredProducts = [];
+
+        // Đọc dữ liệu từ json-server
+        $http.get("http://localhost:3000/products").then(function (response) {
+          $scope.products = response.data;
+          $http.get("http://localhost:3000/category").then(function (response) {
+            $scope.categories = response.data;
+
+            // Mặc định chọn tất cả danh mục và lọc tất cả sản phẩm
+            $scope.categories.forEach(function (category) {
+              $scope.selectedCategories[category.id] = true;
+            });
+            $scope.filterProducts();
+          });
+        });
+
+        // Lọc sản phẩm khi danh mục được chọn thay đổi
+        $scope.filterProducts = function () {
+          $scope.filteredProducts = $scope.products.filter(function (product) {
+            return $scope.selectedCategories[product.idCategory];
+          });
+        };
+      });
+    </script>
+  </body>
+</html>

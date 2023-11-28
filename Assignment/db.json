@@ -1,28 +1,55 @@
 {
-  "products": [
+  "size": [
     {
       "id": 1,
-      "name": "Quần thun",
-      "price": "$100",
-      "desc": "Sản phẩm chính hãng, chất lượng, uy tín hàng đầu thế giới",
-      "img": "/img/pro1.jpg",
-      "idDanhmuc": 1
+      "size": "XL"
     },
     {
       "id": 2,
-      "name": "Áo thu đông",
-      "price": "$100",
-      "desc": "Sản phẩm chính hãng, chất lượng, uy tín hàng đầu thế giới",
-      "img": "/img/pro1.jpg",
-      "idDanhmuc": 2
+      "size": "M"
     },
     {
       "id": 3,
-      "name": "Váy thu đông",
-      "price": "$100",
-      "desc": "Sản phẩm chính hãng, chất lượng, uy tín hàng đầu thế giới",
-      "img": "/img/pro1.jpg",
-      "idDanhmuc": 3
+      "size": "L"
+    },
+    {
+      "id": 4,
+      "size": "XXL"
+    }
+  ],
+  "color": [
+    {
+      "id": 1,
+      "color": "Đen"
+    },
+    {
+      "id": 2,
+      "color": "Vàng"
+    },
+    {
+      "id": 3,
+      "color": "Đỏ"
+    },
+    {
+      "id": 4,
+      "color": "Tím"
+    },
+    {
+      "id": 4,
+      "color": "Trắng"
+    }
+  ],
+  "products": [
+    {
+      "namePro": "Áo Phao Nữ 3S Siêu Nhẹ Tay Raglan",
+      "pricePro": "452",
+      "soluong": 123,
+      "size": "XL",
+      "color": "Tím",
+      "img": "/img/ao-khoac-do",
+      "desc": "Thành phần: 100% Nylon ở lớp ngoài và lớp lót, 100% Polyester lớp bông nhồi\n\nLà sẩn phẩm quốc dân kế thừa bản 3S - Siêu nhẹ, Siêu gọn, Siêu ấm\n\nĐiểm nhấn sản phẩm năm nay là thiết kế mới mẻ tay raglan, in phản quang logo và lưng eo, tạo ra sự khác biệt, cá tính và ấn tượng\n\nSản xuất tại Việt Nam\n\nYODY - Look good. Feel good.",
+      "id": 1,
+      "idCategory": 3
     }
   ],
   "category": [
@@ -37,6 +64,14 @@
     {
       "id": 3,
       "name": "Váy"
+    }
+  ],
+  "user": [
+    {
+      "userName": "ninhnc",
+      "email": "123@gmail.com",
+      "password": "123",
+      "id": 1
     }
   ]
 }

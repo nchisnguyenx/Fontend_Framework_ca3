@@ -1,0 +1,183 @@
+{
+  "danhmuc": [
+    {
+      "id": 1,
+      "ten": "Áo Khoác Nam"
+    },
+    {
+      "id": 2,
+      "ten": "Áo Blazer Nam"
+    },
+    {
+      "id": 3,
+      "ten": "Áo Thun Nam"
+    }
+  ],
+  "sanpham": [
+    {
+      "id": 1,
+      "ten": "2023-11-24 | Áo Khoác Chần Bông Nam Cổ Trụ Phối Rib Form Regular - 10F23JAC007",
+      "anh": "img/sanpham/ao-khoac-01.webp",
+      "giaBan": "1,010,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 1,
+      "luotMua": 10,
+      "ngayTao": "2023-11-24"
+    },
+    {
+      "id": 2,
+      "ten": "2023-11-23 | Áo Khoác Nam Dây Kéo Cổ Trụ Phối Rib Form Regular - 10F23JAC008",
+      "anh": "img/sanpham/ao-khoac-02.webp",
+      "giaBan": "850,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 1,
+      "luotMua": 11,
+      "ngayTao": "2023-11-23"
+    },
+    {
+      "id": 3,
+      "ten": "2023-11-25 | Áo Khoác Chần Bông Nam Sát Nách Khóa Kéo Form Regular - 10F23JAC025",
+      "anh": "img/sanpham/ao-khoac-03.webp",
+      "giaBan": "800,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 1,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 4,
+      "ten": "Áo Khoác Bomber Nam Kaki Khóa Kéo Gập Ly Form Regular - 10F23JAC009",
+      "anh": "img/sanpham/ao-khoac-04.webp",
+      "giaBan": "1,181,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 1,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 5,
+      "ten": "Áo Khoác Bomber Nam Da Lộn Trơn Dây Kéo Form Regular - 10F23JAC001",
+      "anh": "img/sanpham/ao-khoac-05.webp",
+      "giaBan": "1,100,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 1
+    },
+    {
+      "id": 6,
+      "ten": "Áo Khoác Nam Flannel Tay Dài Khóa Kéo Kẻ Caro Form Regular - 10F23JAC002",
+      "anh": "img/sanpham/ao-khoac-06.webp",
+      "giaBan": "1,200,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 1,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 7,
+      "ten": "Áo Khoác Bomber Nam Nylon Chần Bông Phối Màu Form Regular - 10F23JAC006",
+      "anh": "img/sanpham/ao-khoac-07.webp",
+      "giaBan": "981,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 1,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 11,
+      "ten": "Áo Vest Blazer Nam Tay Dài Trơn Form Fitted - 10F22VES002",
+      "anh": "img/sanpham/ao-blazer-01.webp",
+      "giaBan": "1,010,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 2,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 12,
+      "ten": "Áo Vest Blazer Nam Tay Dài Trơn Form Fitted - 10F22VES001",
+      "anh": "img/sanpham/ao-blazer-02.webp",
+      "giaBan": "850,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 2,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 13,
+      "ten": "Áo Vest Blazer Nam Tencel Tay Dài Trơn Form Fitted - 10F21VES005",
+      "anh": "img/sanpham/ao-blazer-03.webp",
+      "giaBan": "800,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 2,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 14,
+      "ten": "Áo Vest Blazer Nam Tay Dài Trơn Form Fitted - 10F21VES003",
+      "anh": "img/sanpham/ao-blazer-04.webp",
+      "giaBan": "1,181,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 2,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 21,
+      "ten": "Áo Thun Nam S.Café Thêu Chữ Coffee Lovers Form Loose - 10F23TSS062",
+      "anh": "img/sanpham/ao-thun-01.webp",
+      "giaBan": "510,000 VNĐ",
+      "giaNiemYet": "881,000 VNĐ",
+      "idDanhMuc": 3,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 22,
+      "ten": "Áo Thun Nam Tay Ngắn Coffee Trơn S.Café Form Loose - 10F23TSS078",
+      "anh": "img/sanpham/ao-thun-02.webp",
+      "giaBan": "850,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 3,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 23,
+      "ten": "Áo Thun Nam Tay Ngắn Cotton Cổ Tròn In Hình Form Regular - 10S23TSS017",
+      "anh": "img/sanpham/ao-thun-03.webp",
+      "giaBan": "800,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 3,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    },
+    {
+      "id": 24,
+      "ten": "Áo Thun Nam Organic Cotton Tay Ngắn Trơn Phối Nhãn Form Fitted - 10S23TSS006",
+      "anh": "img/sanpham/ao-thun-04.webp",
+      "giaBan": "1,181,000 VNĐ",
+      "giaNiemYet": "2,081,000 VNĐ",
+      "idDanhMuc": 3,
+      "luotMua": 9,
+      "ngayTao": "2023-11-25"
+    }
+  ],
+  "user": [
+    {
+      "email": "vanluong2509@gmail.com",
+      "password": "hihi",
+      "id": 1
+    },
+    {
+      "email": "ninh4513@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "email": "12@gmail.com",
+      "password": "123",
+      "id": 3
+    }
+  ]
+}

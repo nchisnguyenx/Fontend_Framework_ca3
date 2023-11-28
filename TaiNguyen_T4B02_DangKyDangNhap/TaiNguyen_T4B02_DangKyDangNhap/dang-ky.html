@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appSinup">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng kí</title>
+
+    <!-- Nhúng bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+
+    <!-- Nhúng font icon -->
+    <script
+      src="https://kit.fontawesome.com/ae333ffef2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <!-- Header 1 -->
+      <div class="row py-2">
+        <div class="col-4"></div>
+        <div class="col-4 text-center align-self-center">
+          <a href="#/!">
+            <img src="/img/logo/logo-black.webp" alt="" style="height: 36px" />
+          </a>
+        </div>
+        <div class="col-4 text-end align-self-center">
+          <!-- <i class="fa-solid fa-heart ms-2"></i>
+          <i class="fa-solid fa-cart-shopping ms-2"></i> -->
+          <a href="/dang-nhap.html" class="ms-2 btn btn-light btn-sm"
+            >Đăng nhập</a
+          >
+          <!-- <a href="/dang-ky.html" class="ms-2 btn btn-primary btn-sm"
+            >Đăng ký</a
+          > -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Khu vực main content -->
+    <div class="container" style="min-height: calc(100vh - 140px)" ng-view>
+      <h1 class="text-center">Đăng kí tài khoản</h1>
+      <form
+        style="width: 500px; margin: auto"
+        class="shadow-lg p-3 rounded-2"
+        ng-controller="SinupController"
+        ng-submit="sinUp()"
+      >
+        <div class="alert alert-danger alert-dismissible" ng-show="isValid">
+          <button
+            type="button"
+            class="btn btn-close"
+            ng-click="closeAlert()"
+          ></button>
+          <strong>Fail!</strong> Đăng kí thất bại !!! <br />{{notifyErro}}
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            ng-model="user.email"
+            placeholder="abc@mail.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+            placeholder="Nhập password"
+            ng-model="user.password"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="Nhập password"
+            ng-model="confirmPassword"
+          />
+        </div>
+        <button class="btn btn-success" type="submit">Đăng kí</button>
+      </form>
+    </div>
+
+    <!-- Khu vực footer -->
+    <div class="container-fluid bg-dark">
+      <div class="container py-3">
+        <div class="text-start">
+          <img src="/img/logo/logo-white.webp" alt="" height="32px" />
+        </div>
+        <div class="text-start">
+          <span class="text-light" style="font-size: small"
+            >CÔNG TY TNHH ROUTINE VIETNAM | Địa chỉ: tầng 5 Tòa nhà IMC, 62 Trần
+            Quang Khải - Phường Tân Định - Quận 1 - TP Hồ Chí Minh.</span
+          >
+        </div>
+      </div>
+    </div>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/angular-route.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script>
+      var app = angular.module("appSinup", []);
+      app.controller("SinupController", function ($scope, $http, $window) {
+        $scope.user = { email: "", password: "" };
+        $scope.confirmPassword = "";
+        $scope.isValid = false;
+        $scope.notifyErro = "";
+        $scope.closeAlert = function () {
+          $scope.isValid = false;
+        };
+        $scope.sinUp = function () {
+          // Validate
+          if (
+            $scope.user.email === "" ||
+            $scope.user.password === "" ||
+            $scope.confirmPassword === ""
+          ) {
+            $scope.isValid = true;
+            $scope.notifyErro = "Không được để trống";
+            return;
+          }
+          $http({
+            url: "http://localhost:3000/user",
+            method: "POST",
+            data: $scope.user,
+          }).then(function (res) {
+            $window.location.href = "/dang-nhap.html";
+            console.log("thanh cong");
+          });
+        };
+      });
+    </script>
+  </body>
+</html>
