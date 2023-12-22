@@ -13,7 +13,10 @@
   </head>
   <body>
     <header ng-controller="headerController">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top z-3">
+      <nav
+        class="navbar navbar-expand-lg fixed-top z-3 shadow-lg"
+        style="background-color: #faf5e9"
+      >
         <div class="container-fluid">
           <a class="navbar-brand" href="#!">
             <img
@@ -84,7 +87,7 @@
             data-bs-parent="#sidebar-nav"
           >
             <li class="text-center p-3">
-              <a href="./category.html">
+              <a href="#!/listCategory">
                 <i class="bi bi-dash"></i> <span>Danh sách danh mục</span>
               </a>
             </li>
@@ -106,7 +109,7 @@
             data-bs-parent="#sidebar-nav"
           >
             <li class="text-center p-3">
-              <a href="./bill.html">
+              <a href="#!/bill">
                 <i class="bi bi-dash"></i> <span>Danh sách đơn hàng</span>
               </a>
             </li>
@@ -149,6 +152,29 @@
             templateUrl: "/admin/components/editProduct/editpro.html",
             controller: "EditProductController",
           })
+          .when("/chitietPro/:id", {
+            templateUrl: "/admin/components/chitietPro/deltailpro.html",
+            controller: "chitietProController",
+          })
+
+          //categories
+          .when("/listCategory", {
+            templateUrl: "/admin/components/danhmuc/category.html",
+            controller: "categoryController",
+          })
+          .when("/addCate", {
+            templateUrl: "/admin/components/addDanhmuc/addcategory.html",
+            controller: "addCategoryController",
+          })
+          .when("/editCate/:id", {
+            templateUrl: "/admin/components/editDanhmuc/editcategory.html",
+            controller: "editCategoryController",
+          })
+          // Bill
+          .when("/bill", {
+            templateUrl: "/admin/components/bill/bill.html",
+            controller: "billController",
+          })
           .otherwise({
             redirectTo: "/",
           });
@@ -157,5 +183,11 @@
     <script src="/admin/components/product/product.js"></script>
     <script src="/admin/components/addProduct/addpro.js"></script>
     <script src="/admin/components/editProduct/editpro.js"></script>
+    <script src="/admin/components/chitietPro/chitietpro.js"></script>
+    <!-- Categoty  -->
+    <script src="/admin/components/danhmuc/danhmuc.js"></script>
+    <script src="/admin/components/addDanhmuc/addCate.js"></script>
+    <script src="/admin/components/editDanhmuc/editCate.js"></script>
+    <script src="/admin/components/bill/bill.js"></script>
   </body>
 </html>

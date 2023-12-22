@@ -2,19 +2,23 @@ myApp.controller("AddProController", function ($scope, $window, $http) {
   $http.get("http://localhost:3000/size").then(function (res) {
     $scope.sizes = res.data;
   });
+  $http.get("http://localhost:3000/category").then(function (res) {
+    $scope.categories = res.data;
+  });
   $http.get("http://localhost:3000/color").then(function (res) {
     $scope.colors = res.data;
   });
   $scope.isValid = false;
   $scope.notifyError = "";
   $scope.pro = {
-    namePro: "",
-    pricePro: "",
+    name: "",
+    price: "",
     soluong: "",
     size: "",
     color: "",
     img: "",
     desc: "",
+    idCategory: "",
   };
   $scope.closeNotifyError = function () {
     $scope.isValid = false;
@@ -28,7 +32,8 @@ myApp.controller("AddProController", function ($scope, $window, $http) {
       $scope.pro.size === "" ||
       $scope.pro.color === "" ||
       $scope.pro.img === "" ||
-      $scope.pro.desc === ""
+      $scope.pro.desc === "" ||
+      $scope.pro.idCategory === ""
     ) {
       $scope.notifyError = "Không được để trống!! Xin nhập đủ dữ liêu !!";
       $scope.isValid = true;

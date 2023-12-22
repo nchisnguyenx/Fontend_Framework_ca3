@@ -1,6 +1,9 @@
 myApp.controller(
   "EditProductController",
   function ($scope, $window, $http, $routeParams) {
+    $http.get("http://localhost:3000/category").then(function (res) {
+      $scope.categories = res.data;
+    });
     $http.get("http://localhost:3000/size").then(function (res) {
       $scope.sizes = res.data;
     });

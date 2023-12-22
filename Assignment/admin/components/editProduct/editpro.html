@@ -19,7 +19,7 @@
         type="text"
         class="form-control"
         id="validationCustom01"
-        ng-model="pro.namePro"
+        ng-model="pro.name"
         name="namePro"
       />
     </div>
@@ -30,7 +30,7 @@
         class="form-control"
         id="validationCustom02"
         value="0"
-        ng-model="pro.pricePro"
+        ng-model="pro.price"
       />
     </div>
     <div class="col-md-4">
@@ -74,6 +74,19 @@
           ng-model="pro.img"
         />
       </div>
+    </div>
+    <div class="col-md-4">
+      <label for="danhmuc" class="form-label">Danh mục</label>
+      {{pro.idCategory}}
+      <select class="form-select" id="danhmuc">
+        <option
+          ng-repeat="category in categories"
+          value="{{category.id}}"
+          selected="{{category.id === pro.idCategory}}"
+        >
+          {{category.name}}
+        </option>
+      </select>
     </div>
     <div class="col-12">
       <label for="exampleFormControlTextarea1" class="form-label">Mô tả</label>

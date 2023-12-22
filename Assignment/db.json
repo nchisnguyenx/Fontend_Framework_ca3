@@ -1,4 +1,61 @@
 {
+  "checkout": [
+    {
+      "0": {
+        "name": "Áo Phao Nữ 3S Siêu Nhẹ Tay Raglan",
+        "price": "452",
+        "soluong": 123,
+        "size": "XL",
+        "color": "Trắng",
+        "img": "/img/pro1.jpg",
+        "desc": "Thành phần: 100% Nylon ở lớp ngoài và lớp lót, 100% Polyester lớp bông nhồi\n\nLà sẩn phẩm quốc dân kế thừa bản 3S - Siêu nhẹ, Siêu gọn, Siêu ấm\n\nĐiểm nhấn sản phẩm năm nay là thiết kế mới mẻ tay raglan, in phản quang logo và lưng eo, tạo ra sự khác biệt, cá tính và ấn tượng\n\nSản xuất tại Việt Nam\n\nYODY - Look good. Feel good.",
+        "id": 1,
+        "idCategory": 3,
+        "quanlity": 1
+      },
+      "name": "1",
+      "email": "123@gmail.com",
+      "diachi": "1",
+      "total": 452,
+      "id": 1
+    },
+    {
+      "0": {
+        "name": "Áo Phao Nữ 3S Siêu Nhẹ Tay Raglan",
+        "price": "452",
+        "soluong": 123,
+        "size": "XL",
+        "color": "Trắng",
+        "img": "/img/pro1.jpg",
+        "desc": "Thành phần: 100% Nylon ở lớp ngoài và lớp lót, 100% Polyester lớp bông nhồi\n\nLà sẩn phẩm quốc dân kế thừa bản 3S - Siêu nhẹ, Siêu gọn, Siêu ấm\n\nĐiểm nhấn sản phẩm năm nay là thiết kế mới mẻ tay raglan, in phản quang logo và lưng eo, tạo ra sự khác biệt, cá tính và ấn tượng\n\nSản xuất tại Việt Nam\n\nYODY - Look good. Feel good.",
+        "id": 1,
+        "idCategory": 3,
+        "quanlity": 2
+      },
+      "1": [],
+      "name": "11",
+      "diachi": "1",
+      "total": null,
+      "trangthai": "",
+      "id": 2
+    }
+  ],
+  "cart": [
+    {
+      "name": "Áo Phao Nữ 3S Siêu Nhẹ Tay Raglan",
+      "price": "452",
+      "soluong": 123,
+      "size": "XL",
+      "color": "Trắng",
+      "img": "/img/pro1.jpg",
+      "desc": "Thành phần: 100% Nylon ở lớp ngoài và lớp lót, 100% Polyester lớp bông nhồi\n\nLà sẩn phẩm quốc dân kế thừa bản 3S - Siêu nhẹ, Siêu gọn, Siêu ấm\n\nĐiểm nhấn sản phẩm năm nay là thiết kế mới mẻ tay raglan, in phản quang logo và lưng eo, tạo ra sự khác biệt, cá tính và ấn tượng\n\nSản xuất tại Việt Nam\n\nYODY - Look good. Feel good.",
+      "id": 1,
+      "idCategory": 3,
+      "quanlity": 2
+    },
+    [],
+    []
+  ],
   "size": [
     {
       "id": 1,
@@ -24,32 +81,57 @@
     },
     {
       "id": 2,
-      "color": "Vàng"
+      "color": "Trắng"
     },
     {
       "id": 3,
-      "color": "Đỏ"
-    },
-    {
-      "id": 4,
-      "color": "Tím"
-    },
-    {
-      "id": 4,
-      "color": "Trắng"
+      "color": "Xanh"
     }
   ],
   "products": [
     {
-      "namePro": "Áo Phao Nữ 3S Siêu Nhẹ Tay Raglan",
-      "pricePro": "452",
+      "name": "Áo Phao Nữ 3S Siêu Nhẹ Tay Raglan",
+      "price": "452",
       "soluong": 123,
       "size": "XL",
-      "color": "Tím",
-      "img": "/img/ao-khoac-do",
+      "color": "Trắng",
+      "img": "/img/pro1.jpg",
       "desc": "Thành phần: 100% Nylon ở lớp ngoài và lớp lót, 100% Polyester lớp bông nhồi\n\nLà sẩn phẩm quốc dân kế thừa bản 3S - Siêu nhẹ, Siêu gọn, Siêu ấm\n\nĐiểm nhấn sản phẩm năm nay là thiết kế mới mẻ tay raglan, in phản quang logo và lưng eo, tạo ra sự khác biệt, cá tính và ấn tượng\n\nSản xuất tại Việt Nam\n\nYODY - Look good. Feel good.",
       "id": 1,
       "idCategory": 3
+    },
+    {
+      "name": "Áo Khoác Nỉ Thể Thao Nữ Cổ Dựng Phối Tay",
+      "price": "569",
+      "soluong": 12,
+      "size": "XL",
+      "color": "Đen",
+      "img": "/img/ao-khoac-ni.jpg",
+      "desc": "Chất liệu: Doubleface Smart\n\nVải chính: 87% Polyester, 8% Rayon, 5% Spandex\n\nLót túi: 100% Polyester\n\nCấu trúc dệt 4 hệ sợi liên kết chặt chẽ, bề mặt chắc chắn\n\nHai mặt phải mang lại cảm giác tiếp xúc da thoải mái, hạn chế xù lông vón cục\n\nCấu trúc Double Face được mô tả như một chiếc bánh sandwich với lớp giữa mềm mỏng – xốp chứa đựng không khí tĩnh, tăng cường khả năng giữ ấm cơ thể\n\nÁo khoác dày dặn, xốp nhẹ, hạn chế nhăn nhàu, tính năng giữ ấm cơ thể vượt trội là những ưu điểm của dòng sản phẩm này.\n\nVới thiết kế năng động, kết hợp sự pha phối màu sắc trẻ trung nữ tính, chi tiết điểm nhấn tinh tế mang phong cách thể thao, giúp bạn trông trẻ hơn.\n\nSản xuất tại Việt Nam",
+      "idCategory": "2",
+      "id": 2
+    },
+    {
+      "name": "Quần Jeans Dáng Boyfriend Mài Xước",
+      "price": "502",
+      "soluong": 43,
+      "size": "XXL",
+      "color": "Đen",
+      "img": "/img/quan-1.jpg",
+      "desc": "Thành phần: 100% Cotton USA\n\nQuần Jean nữ chất liệu mềm mại, co giãn\n\nThiết kế quần mài xước, trẻ trung, năng động mang đến cảm giác thoải mái hoàn hảo trong mỗi chuyễn động\n\nKiểu dáng quần suông, ôm nhẹ\n\nQuần Jean nữ kết hợp áo polo, áo thun thời trang, tiện lợi cho đi làm, đi chơi, đi cafe cùng bạn bè\n\nYODY - Look good. Feel good\n\nSản xuất tại Việt Nam",
+      "idCategory": "1",
+      "id": 3
+    },
+    {
+      "name": "Áo Phao Nữ 3S Siêu Nhẹ Tay Raglan",
+      "price": "452",
+      "soluong": 11,
+      "size": "XL",
+      "color": "Trắng",
+      "img": "/img/quan-1.jpg",
+      "desc": "11111",
+      "idCategory": "5",
+      "id": 4
     }
   ],
   "category": [
@@ -64,6 +146,14 @@
     {
       "id": 3,
       "name": "Váy"
+    },
+    {
+      "name": "Áo khoác thể thao",
+      "id": 4
+    },
+    {
+      "name": "1111",
+      "id": 5
     }
   ],
   "user": [
@@ -72,6 +162,18 @@
       "email": "123@gmail.com",
       "password": "123",
       "id": 1
+    },
+    {
+      "userName": "ninhnc",
+      "email": "123@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "userName": "khanhlinh",
+      "email": "n@gmail.com",
+      "password": "123",
+      "id": 3
     }
   ]
 }

@@ -185,6 +185,10 @@
             templateUrl: "/components/register/register.html",
             controller: "RegisterController",
           })
+          .when("/checkout", {
+            templateUrl: "/components/checkout/checkout.html",
+            controller: "checkoutController",
+          })
           .otherwise({
             redirectTo: "/",
           });
@@ -193,6 +197,7 @@
     <script src="/components/trangchu/home.js"></script>
     <script src="/components/chitiet/detail.js"></script>
     <script src="/components/timkiem/timkiem.js"></script>
-    <!-- <script src="/components/giohang/cart.js"></script> -->
+    <script src="/components/giohang/cart.js"></script>
+    <script src="/components/checkout/checkout.js"></script>
   </body>
 </html>

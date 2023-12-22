@@ -1,0 +1,27 @@
+<div class="mb-3 p-5">
+  <div
+    class="alert alert-danger alert-dismissible"
+    role="alert"
+    ng-show="isValid"
+  >
+    <button
+      type="button"
+      class="btn-close"
+      ng-click="closeNotifyError()"
+    ></button>
+    <strong>Thất bại !!!</strong> {{notifyError}}
+  </div>
+  <h1 class="text-bg-success rounded p-2 w-50 mb-4">Sửa danh mục</h1>
+  <form ng-submit="editCate()" class="w-50">
+    <div class="form-group mb-3">
+      <label for="category" class="mb-1">Tên danh mục</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category"
+        ng-model="cate.name"
+      />
+    </div>
+    <button class="btn btn-primary">Sửa</button>
+  </form>
+</div>

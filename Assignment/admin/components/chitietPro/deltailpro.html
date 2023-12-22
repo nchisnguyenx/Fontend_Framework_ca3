@@ -1,0 +1,49 @@
+<div class="mb-3 p-5">
+  <div class="row">
+    <div class="col col-lg-4">
+      <img src="{{pro.img}}" class="img-fluid" alt="pro1" />
+    </div>
+    <div class="col col-lg-8">
+      <form action="">
+        <h1>{{pro.name}}</h1>
+
+        <h5>Danh mục: {{nameCategory}}</h5>
+        <h3>${{pro.price}}</h3>
+        <p>{{pro.desc}}</p>
+        <hr />
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Số lượng</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            value="{{pro.soluong}}"
+            disabled
+          />
+        </div>
+        <div class="mb-3">
+          <label for="" class="mb-3">Size</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            value="{{pro.size}}"
+            disabled
+          />
+        </div>
+        <div class="mb-3">
+          <label for="" class="mb-3">Color</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            value="{{pro.color}}"
+            disabled
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
